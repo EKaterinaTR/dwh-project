@@ -10,7 +10,7 @@ client = Elasticsearch("http://localhost:9200")
 
 # Successful response!
 client.info()
-client.get(index='article', id=490076)
+client.get(index='articles', id=12345)
 #%%
 from elasticsearch import Elasticsearch
 
@@ -18,5 +18,4 @@ from elasticsearch import Elasticsearch
 client = Elasticsearch("http://localhost:9200")
 
 # Successful response!
-client.info()
-print(client.index(index='article').body())
+print(client.info())
