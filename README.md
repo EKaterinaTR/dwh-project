@@ -7,17 +7,17 @@ Training project to use different instrument in dwh.
 - [Загрузка данных в источники](#Data-creating-and-parsing)
 - [Загрузка данных в dwh - Luigi](#Luigi)
 - [Немного BI, визуализация данных - Yandex DataLens](#Yandex-DataLens) 
-##Idea 
+## Idea 
 Концепция с точки зрения бизнеса - компания, предоставляющая доступ к статьям для зарегистрированных пользователей.
-Есть база данных клиентов - Postgres
-Есть база данных с запросами пользователей - MySQL
-Есть база данных с текстами для предоставления клиентам - Elasticsearch
-Есть сторонняя база данных с аннотациями, на основе которых предстоит выбрать тексты для добавления в Elasticsearch - MongoDB  
+- Есть база данных клиентов - Postgres
+- Есть база данных с запросами пользователей - MySQL
+- Есть база данных с текстами для предоставления клиентам - Elasticsearch
+- Есть сторонняя база данных с аннотациями, на основе которых предстоит выбрать тексты для добавления в Elasticsearch - MongoDB  
 ## Docker
-MySQL - https://hub.docker.com/_/mysql 
-Postgres - https://hub.docker.com/_/postgres
-MongoDB - https://hub.docker.com/_/mongo
-Elasticsearch - https://hub.docker.com/r/bitnami/elasticsearch 
+- MySQL - https://hub.docker.com/_/mysql 
+- Postgres - https://hub.docker.com/_/postgres
+- MongoDB - https://hub.docker.com/_/mongo
+- Elasticsearch - https://hub.docker.com/r/bitnami/elasticsearch 
 ## Create table, index, collection
 ## Data creating and parsing
 ## Luigi
