@@ -1,0 +1,31 @@
+PUT http://localhost:9200/articles
+content-type: application/json
+
+{
+
+  "mappings": {
+
+      "properties": {
+        "name": {
+          "type": "text",
+          "analyzer": "russian"
+          },
+        "text": {
+          "type": "text",
+          "analyzer": "russian"
+        },
+        "author": {
+          "type": "keyword"
+        },
+        "lang": {
+          "type": "keyword"
+        },
+        "date": {
+          "type": "date"
+        }
+      }}
+}
+
+####
+
+
