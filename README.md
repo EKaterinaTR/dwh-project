@@ -26,7 +26,7 @@ Training project to use different instrument in dwh.
 ## Data creating and parsing
  В create_dowload_data python скрипты для парсинга статей с habr.
  С помощью статей с хабр заполняется база статей(elasticsearch), база аннотацией(MongoDB), база запросов пользователей(MySQL).
- В качестве данных пользователей взят датасет - https://data.world/midori1017/fake-users.
+ В качестве данных пользователей взят [датасет](https://data.world/midori1017/fake-users).
 ## Luigi
 3 задачи для запуска с помощью Luigi:
 - импорт пользователей в dwh
@@ -36,7 +36,7 @@ Training project to use different instrument in dwh.
 ## Yandex DataLens
 Для визуализации использован Yandex DataLens. 
 В качестве источника данных выбран Google Sheets, данных из dwh  передаются в него.
-Сссылка на визуализацию:https://datalens.yandex/s95szjzzeg76j 
+[Дашборд](https://datalens.yandex/s95szjzzeg76j) 
 
 ## CDC
 CDC используется для синхноризации базы данных пользователей и dwh. 
