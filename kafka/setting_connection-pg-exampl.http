@@ -1,0 +1,24 @@
+POST  http://localhost:8083/connectors/
+Content-Type:application/json
+Accept:application/json
+
+{
+  "name": "pg-connector",
+  "config": {
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+    "database.hostname": "some-postgres-1",
+    "database.port": "5432",
+    "database.user": "postgres",
+    "database.dbname" : "postgres",
+    "database.password": "mysecretpassword",
+    "database.server.name": "pg-user",
+    "table.include.list": "public.users",
+    "tasks.max": "1",
+    "plugin.name": "pgoutput",
+    "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "key.converter.schemas.enable": "false",
+    "value.converter.schemas.enable": "false",
+    "snapshot.mode": "always"
+  }
+}

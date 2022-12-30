@@ -1,0 +1,47 @@
+version: '2'
+services:
+  zookeeper:
+    image: quay.io/debezium/zookeeper:1.9
+    ports:
+      - "2181:2181"
+      - "2888:2888"
+      - "3888:3888"
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes
+  kafka:
+    image: quay.io/debezium/kafka:1.9
+    ports:
+      - "9092:9092"
+      - "29092:29092"
+    links:
+      - zookeeper
+    environment:
+      - ZOOKEEPER_CONNECT=zookeeper:2181
+      - ALLOW_PLAINTEXT_LISTENER=yes
+      - ALLOW_ANONYMOUS_LOGIN=yes
+      - KAFKA_ADVERTISED_LISTENERS=LISTENER_EXT://localhost:29092,LISTENER_INT://kafka:9092
+      - KAFKA_LISTENER_SECURITY_PROTOCOL_MAP=LISTENER_INT:PLAINTEXT,LISTENER_EXT:PLAINTEXT
+      - KAFKA_LISTENERS=LISTENER_INT://0.0.0.0:9092,LISTENER_EXT://0.0.0.0:29092
+      - KAFKA_INTER_BROKER_LISTENER_NAME=LISTENER_INT
+      - KAFKA_CFG_EXTER_BROKER_LISTENER_NAME=LISTENER_EXT
+  some-postgres:
+    image: postgres
+    ports:
+      - "5444:5432"
+    command: "postgres -c wal_level=logical"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=mysecretpassword
+  connect:
+    image: quay.io/debezium/connect:1.9
+    ports:
+      - "8083:8083"
+    links:
+      - kafka
+      - some-postgres
+    environment:
+      - BOOTSTRAP_SERVERS=kafka:9092
+      - GROUP_ID=1
+      - CONFIG_STORAGE_TOPIC=my_connect_configs
+      - OFFSET_STORAGE_TOPIC=my_connect_offsets
+      - STATUS_STORAGE_TOPIC=my_connect_statuses

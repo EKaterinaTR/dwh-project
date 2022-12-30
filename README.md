@@ -6,7 +6,8 @@ Training project to use different instrument in dwh.
 - [Создание таблиц, индексов, коллекций и т.д.](#Create-table-index-collection)
 - [Загрузка данных в источники](#Data-creating-and-parsing)
 - [Загрузка данных в dwh - Luigi](#Luigi)
-- [Немного BI, визуализация данных - Yandex DataLens](#Yandex-DataLens) 
+- [Немного BI, визуализация данных - Yandex DataLens](#Yandex-DataLens)
+- [CDC](#CDC)  
 ## Idea 
 Концепция с точки зрения бизнеса - компания, предоставляющая доступ к статьям для зарегистрированных пользователей.
 - Есть база данных клиентов - Postgres
@@ -35,3 +36,8 @@ Training project to use different instrument in dwh.
 Для визуализации использован Yandex DataLens. 
 В качестве источника данных выбран Google Sheets, данных из dwh  передаются в него.
 Сссылка на визуализацию:https://datalens.yandex.ru/s95szjzzeg76j-monitoring-statey?state=4aaac6c0124 
+
+## CDC
+CDC используется для синхноризации базы данных пользователей и dwh. 
+Postgres-user -> Debezium -> Kafka -> consumer -> Postgres
+

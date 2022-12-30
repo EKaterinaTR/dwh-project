@@ -1,0 +1,23 @@
+GET http://localhost:8083/
+Accept:application/json
+
+####
+
+GET http://localhost:8083/connectors
+Accept:application/json
+
+####
+GET http://localhost:8083/connectors/pg-connector/status
+Accept:application/json
+####
+
+DELETE  localhost:8083/connectors/pg-connector/
+Accept:application/json
+####
+
+GET http://localhost:8083/connector-plugins/
+Accept:application/json
+####
+
+GET http://localhost:8083/connector-plugins/io.debezium.connector.postgresql.PostgresConnector/config
+Accept:application/json
