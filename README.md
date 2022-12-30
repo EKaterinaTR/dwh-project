@@ -8,7 +8,7 @@ Training project to use different instrument in dwh.
 - [Загрузка данных в dwh - Luigi](#Luigi)
 - [Немного BI, визуализация данных - Yandex DataLens](#Yandex-DataLens)
 - [CDC](#CDC) 
-- [Airflow][#Airflow] 
+- [Airflow](#Airflow)
 ## Idea 
 Концепция с точки зрения бизнеса - компания, предоставляющая доступ к статьям для зарегистрированных пользователей.
 - Есть база данных клиентов - Postgres
