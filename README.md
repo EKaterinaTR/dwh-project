@@ -7,7 +7,8 @@ Training project to use different instrument in dwh.
 - [Загрузка данных в источники](#Data-creating-and-parsing)
 - [Загрузка данных в dwh - Luigi](#Luigi)
 - [Немного BI, визуализация данных - Yandex DataLens](#Yandex-DataLens)
-- [CDC](#CDC)  
+- [CDC](#CDC) 
+- [Airflow][#Airflow] 
 ## Idea 
 Концепция с точки зрения бизнеса - компания, предоставляющая доступ к статьям для зарегистрированных пользователей.
 - Есть база данных клиентов - Postgres
@@ -40,4 +41,8 @@ Training project to use different instrument in dwh.
 ## CDC
 CDC используется для синхноризации базы данных пользователей и dwh. 
 Postgres-user -> Debezium -> Kafka -> consumer -> Postgres
+
+## Airflow
+Используется для поиска статей по запросам пользователей, сохранения статистики результата в dwh.([замена реализации 2 задачи из Luigi](#Luigi))
+
 
