@@ -12,7 +12,8 @@ Training project to use different instrument in dwh.
 - Есть база данных клиентов - Postgres
 - Есть база данных с запросами пользователей - MySQL
 - Есть база данных с текстами для предоставления клиентам - Elasticsearch
-- Есть сторонняя база данных с аннотациями, на основе которых предстоит выбрать тексты для добавления в Elasticsearch - MongoDB  
+- Есть сторонняя база данных с аннотациями, на основе которых предстоит выбрать тексты для добавления в Elasticsearch - MongoDB
+- Есть база данных для работы аналитиков(dwh) - Postgres   
 ## Docker
 - MySQL - https://hub.docker.com/_/mysql 
 - Postgres - https://hub.docker.com/_/postgres
@@ -24,7 +25,10 @@ Training project to use different instrument in dwh.
  В create_dowload_data python скрипты для парсинга статей с habr.
  С помощью статей с хабр заполняется база статей(elasticsearch), база аннотацией(MongoDB), база запросов пользователей(MySQL).
  В качестве данных пользователей взят датасет - https://data.world/midori1017/fake-users.
-
 ## Luigi
+3 задачи для запуска с помощью Luigi:
+- импорт пользователей в dwh
+- поиск статей по запросам пользователей, сохранения статистики результата в dwh
+- поиск подходящик аннотаций для запросов с наихудшей статистикой, сохранения результата в dwh 
 
 ## Yandex DataLens
