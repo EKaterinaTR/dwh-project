@@ -36,7 +36,7 @@ Training project to use different instrument in dwh.
 ## Yandex DataLens
 Для визуализации использован Yandex DataLens. 
 В качестве источника данных выбран Google Sheets, данных из dwh  передаются в него.
-Сссылка на визуализацию:https://datalens.yandex.ru/s95szjzzeg76j-monitoring-statey?state=4aaac6c0124 
+Сссылка на визуализацию:https://datalens.yandex/s95szjzzeg76j 
 
 ## CDC
 CDC используется для синхноризации базы данных пользователей и dwh. 
