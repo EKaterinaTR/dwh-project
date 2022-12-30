@@ -19,6 +19,12 @@ Training project to use different instrument in dwh.
 - MongoDB - https://hub.docker.com/_/mongo
 - Elasticsearch - https://hub.docker.com/r/bitnami/elasticsearch 
 ## Create table, index, collection
+ В ddl SQL скрипты для mysql и postgres, http-запрос для elasticsearch.
 ## Data creating and parsing
+ В create_dowload_data python скрипты для парсинга статей с habr.
+ С помощью статей с хабр заполняется база статей(elasticsearch), база аннотацией(MongoDB), база запросов пользователей(MySQL).
+ В качестве данных пользователей взят датасет - https://data.world/midori1017/fake-users.
+
 ## Luigi
+
 ## Yandex DataLens
